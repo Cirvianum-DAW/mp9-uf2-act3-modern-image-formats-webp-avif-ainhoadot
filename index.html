@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODERN IMAGE FORMATS WEBP & AVIF</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+        }
+        nav {
+            background-color: #8a8686b9;
+        }
+        header {
+            background-color: #474646b9;
+        }
+        main {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        .image-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 14px;
+            pointer-events: none; /* Evita que el texto sea seleccionable */
+        }
+    </style>
+</head>
+<body>
+    <nav class="text-white p-4">
+        <div class="flex justify-end items-center">
+            <div class="flex space-x-4">
+                <a href="./index.html" class="hover:text-gray-300">Main page</a>
+                <a href="./imatgeHomer.html" class="hover:text-gray-300">Homer</a>
+                <a href="./imatgeLogotip.html" class="hover:text-gray-300">Logotip</a>
+                <a href="./imatgeShowerOfKites.html" class="hover:text-gray-300">Shower of kites</a>
+                <a href="./imatgeSunset.html" class="hover:text-gray-300">Sunset</a>
+                <a href="./imatgeTransparency.html" class="hover:text-gray-300">Transparency</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-white text-center p-5">
+        <h1 class="text-4xl font-bold">MODERN IMAGE FORMATS WEBP & AVIF</h1>
+    </header>
+
+    <main class="text-base text-center">
+        <a href="./imatgeHomer.html" class="image-container">
+            <img src="images/homer.gif" alt="Example 1" />
+            <div class="image-info"></div>
+        </a>
+        <a href="./imatgeLogotip.html" class="image-container">
+            <img src="images/logotip.png" alt="Example 2" />
+            <div class="image-info"></div>
+        </a>
+        <a href="./imatgeShowerOfKites.html" class="image-container">
+            <img src="images/plujaEstels.jpg" alt="Example 3" />
+            <div class="image-info"></div>
+        </a>
+        <a href="./imatgeSunset.html" class="image-container">
+            <img src="images/postaDeSol.jpg" alt="Example 4" />
+            <div class="image-info"></div>
+        </a>
+        <a href="./imatgeTransparency.html" class="image-container">
+            <img src="images/transparency.png" alt="Example 5" />
+            <div class="image-info"></div>
+        </a>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+</html>

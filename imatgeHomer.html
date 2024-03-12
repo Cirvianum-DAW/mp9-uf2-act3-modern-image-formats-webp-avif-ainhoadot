@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MODERN IMAGE FORMATS WEBP & AVIF</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+        .card {
+            background-color: #f3f4f6;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="text-white p-4" style="background-color: #8a8686b9">
+        <div class="flex justify-end items-center">
+            <div class="flex space-x-4">
+                <a href="./index.html" class="hover:text-gray-300">Main page</a>
+                <a href="./imatgeHomer.html" class="hover:text-gray-300">Homer</a>
+                <a href="./imatgeLogotip.html" class="hover:text-gray-300">Logotip</a>
+                <a href="./imatgeShowerOfKites.html" class="hover:text-gray-300">Shower of kites</a>
+                <a href="./imatgeSunset.html" class="hover:text-gray-300">Sunset</a>
+                <a href="./imatgeTransparency.html" class="hover:text-gray-300">Transparency</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-white text-center p-5" style="background-color: #474646b9">
+        <h1 class="text-4xl" style="font-weight: bold;">IMAGES HOMER</h1>
+    </header>
+
+    <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div>
+            <p><strong>Imatge original:</strong></p>
+            <br>
+            <img src="images/homer.gif" alt="Example 1" class="w-full" />
+            <div class="image-info"></div>
+        </div>
+    </main>
+
+    <script src="script/main.js"></script>
+</body>
+</html>
