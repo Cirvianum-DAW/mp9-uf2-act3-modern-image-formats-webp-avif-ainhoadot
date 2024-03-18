@@ -24,8 +24,9 @@ async function getImageInfo(url) {
         };
         const alt = img.alt;
         const size = blob.size;
+        const isOriginal = url.toLowerCase().includes('original');
 
-        resolve({ format, dimensions, alt, size });
+        resolve({ format, dimensions, alt, size, isOriginal });
       } catch (error) {
         reject(error);
       }
@@ -46,14 +47,22 @@ function displayImageInfo(url, container) {
       dimensionsElement.textContent = `Dimensions: ${info.dimensions.width}x${info.dimensions.height}`;
       container.appendChild(dimensionsElement);
 
-    //   const altElement = document.createElement("p");
-    //   altElement.textContent = `Alt: ${info.alt}`;
-    //   container.appendChild(altElement);
-
       const sizeInKB = (info.size / 1024).toFixed(2);
       const sizeElement = document.createElement("p");
       sizeElement.textContent = `Size: ${sizeInKB} KB`;
       container.appendChild(sizeElement);
+
+      if (!info.isOriginal) {
+        const originalImage = images.find(img => img.dataset.original === 'true');
+        const originalSize = getImageInfo(originalImage.src)
+          .then(originalInfo => {
+            const reductionPercentage = (((originalInfo.size - info.size) / originalInfo.size) * 100).toFixed(2);
+            const reductionElement = document.createElement("p");
+            reductionElement.textContent = `Reduction: ${reductionPercentage} %`;
+            container.appendChild(reductionElement);
+          })
+          .catch(console.error);
+      }
     })
     .catch(console.error);
 }
